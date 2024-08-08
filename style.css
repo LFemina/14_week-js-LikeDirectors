@@ -1,0 +1,23 @@
+a {
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
+
+li {
+    margin-bottom: 5.5rem;
+}
+
+.careers {
+    float: left;
+    margin: 0 1.5%;
+    width: 30%;
+}
+
+.films {
+    float: right;
+    margin: 0 1.5%;
+    width: 63%;
+}
