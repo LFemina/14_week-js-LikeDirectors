@@ -43,13 +43,35 @@ const arr = [
     },
 ];
 
-const li1 = document.getElementById('li1');
-const li2 = document.getElementById('li2');
-const li3 = document.getElementById('li3');
-const li4 = document.getElementById('li4');
-const li5 = document.getElementById('li5');
-const li6 = document.getElementById('li6');
-const li7 = document.getElementById('li7');
+const myLikeDirectors = document.getElementById('my-like-directors');
+
+arr.forEach(item => {
+    const li = document.createElement('li');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+
+    p2.classList.add('careers');
+    p3.classList.add('films');
+
+    const strong = document.createElement('strong');
+    strong.textContent = item.name;
+    p1.appendChild(strong);
+
+    p2.textContent = item.career;
+
+    const link = document.createElement('a');
+    link.setAttribute('href', `${item.films}`);
+    link.setAttribute('target', '_blank');
+    link.textContent = "Фильмография";
+    p3.appendChild(link);
+
+    li.appendChild(p1);
+    li.appendChild(p2);
+    li.appendChild(p3);
+
+    myLikeDirectors.appendChild(li);
+});
 
 const topFilmsList = arr.map(item => item.top_rated_film);
 
@@ -58,94 +80,3 @@ const topFilms = document.getElementById('topFilms');
 const paragraph = document.createElement('p');
 paragraph.textContent = topFilmsListJoin;
 topFilms.appendChild(paragraph);
-
-const directorsList = arr.map(item => item.name);
-const careersList = arr.map(item => item.career);
-const filmsWorkList = arr.map(item => item.films);
-
-directorsList.forEach((item, index) => {
-    const paragraph = document.createElement("p");
-    paragraph.classList.add('names');
-    const strong = document.createElement("strong");
-    strong.textContent = `${item}`;
-    paragraph.appendChild(strong);
-    if (index === 0) {
-        li1.appendChild(paragraph);
-    }
-    if (index === 1) {
-        li2.appendChild(paragraph);
-    }
-    if (index === 2) {
-        li3.appendChild(paragraph);
-    }
-    if (index === 3) {
-        li4.appendChild(paragraph);
-    }
-    if (index === 4) {
-        li5.appendChild(paragraph);
-    }
-    if (index === 5) {
-        li6.appendChild(paragraph);
-    }
-    if (index === 6) {
-        li7.appendChild(paragraph);
-    }
-});
-
-careersList.forEach((item, index) => {
-    const paragraph = document.createElement("p");
-    paragraph.classList.add('careers');
-    paragraph.textContent = `${item}`;
-    if (index === 0) {
-        li1.appendChild(paragraph);
-    }
-    if (index === 1) {
-        li2.appendChild(paragraph);
-    }
-    if (index === 2) {
-        li3.appendChild(paragraph);
-    }
-    if (index === 3) {
-        li4.appendChild(paragraph);
-    }
-    if (index === 4) {
-        li5.appendChild(paragraph);
-    }
-    if (index === 5) {
-        li6.appendChild(paragraph);
-    }
-    if (index === 6) {
-        li7.appendChild(paragraph);
-    }
-});
-
-filmsWorkList.forEach((item, index) => {
-    const paragraph = document.createElement("p");
-    paragraph.classList.add('films');
-    const link = document.createElement('a');
-    link.setAttribute('href', `${item}`);
-    link.setAttribute('target', '_blank');
-    link.textContent = "Фильмография";
-    paragraph.appendChild(link);
-    if (index === 0) {
-        li1.appendChild(paragraph);
-    }
-    if (index === 1) {
-        li2.appendChild(paragraph);
-    }
-    if (index === 2) {
-        li3.appendChild(paragraph);
-    }
-    if (index === 3) {
-        li4.appendChild(paragraph);
-    }
-    if (index === 4) {
-        li5.appendChild(paragraph);
-    }
-    if (index === 5) {
-        li6.appendChild(paragraph);
-    }
-    if (index === 6) {
-        li7.appendChild(paragraph);
-    }
-});
